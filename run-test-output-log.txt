@@ -1,0 +1,26 @@
+leva@debian:~/genesys_test$ bash run-test.sh
+Building serverbox
+Sending build context to Docker daemon  5.632kB
+Step 1/1 : FROM ubuntu:20.04
+ ---> d13c942271d6
+Successfully built d13c942271d6
+Successfully tagged compose_test_serverbox:latest
+Building clientbox
+Sending build context to Docker daemon  2.048kB
+Step 1/1 : FROM ubuntu:20.04
+ ---> d13c942271d6
+Successfully built d13c942271d6
+Successfully tagged compose_test_clientbox:latest
+Creating run-testsh_clientbox_1 ... done
+Creating run-testsh_serverbox_1 ... done
+Attaching to run-testsh_clientbox_1, run-testsh_serverbox_1
+serverbox_1  | Just a random TESTVAR value
+serverbox_1  | /etc/issue is Ubuntu 20.04.3 LTS \n \l
+serverbox_1  | Server hostname is 668ba83d9722
+serverbox_1  | Client hostname is 86c4c3ea9c91
+run-testsh_clientbox_1 exited with code 0
+run-testsh_serverbox_1 exited with code 0
+---
+Information from docker:
+serverbox ID=668ba83d9722
+clientbox ID=86c4c3ea9c91

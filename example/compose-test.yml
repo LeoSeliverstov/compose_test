@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  serverbox:
+    build: serverbox/
+    command: ls -la
+    #command: /bin/bash -c ./server.sh
+  clientbox:
+    build: clientbox/

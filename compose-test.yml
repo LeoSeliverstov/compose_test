@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  serverbox:
+    build: serverbox/
+    volumes:
+      - ./serverbox/:/home/
+    command: bash /home/server.sh
+    environment:
+      - TESTVAR=$TESTVAR
+  clientbox:
+    build: clientbox/
+    volumes:
+      - ./serverbox/:/home/
+    command: /bin/bash -c 'hostname > /home/client_id.txt; sleep 2'
